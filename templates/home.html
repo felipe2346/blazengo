@@ -1,0 +1,143 @@
+{% extends './base.html' %}
+{% load static%}
+
+{% block title %}Home Page{% endblock %}
+
+{% block content %}
+
+<section id="hero">
+    <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="1000">
+                
+                <img src="{% static 'images/hero-1.jpg' %}" class="d-block w-100" alt="...">
+                <div class="carousel-overlay">
+                    <div class="carousel-words">
+                        <h5>NDI IGBO CULTURAL AND SOCIAL ENLIGHTENMENT FOR UNITY FOUNDATION</h5>
+                        <!-- <p>A humanitarian organization that Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae cupiditate inventore suscipit impedit doloremque consectetur, dignissimos ex nam voluptas voluptates.
+                        </p> -->
+                    </div>
+                </div>  
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <div class="carousel-overlay"></div>
+                <img src="{% static 'images/hero-2.jpg' %}" class="d-block w-100" alt="...">
+                <div class="carousel-overlay">
+                    <div class="carousel-words">
+                        <h5>NDI IGBO CULTURAL AND SOCIAL ENLIGHTENMENT FOR UNITY FOUNDATION</h5>
+                        <!-- <p>A humanitarian organization that Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae cupiditate inventore suscipit impedit doloremque consectetur, dignissimos ex nam voluptas voluptates.
+                        </p> -->
+                    </div>
+                </div>  
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+                <div class="carousel-overlay"></div>
+                <img src="{% static 'images/hero-3.jpg' %}" class="d-block w-100" alt="...">
+                <div class="carousel-overlay">
+                    <div class="carousel-words">
+                        <h5>CREATING A WORLD OF LOVE, SUPPORT AND INCLUSIVENESS</h5>
+                        <!-- <p>A humanitarian organization that Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae cupiditate inventore suscipit impedit doloremque consectetur, dignissimos ex nam voluptas voluptates.
+                        </p> -->
+                    </div>
+                </div>  
+            </div>
+        </div>
+        <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button> -->
+    </div>
+</section>
+
+<section id="marquee-section">
+    <div class="marquee-container" id="marquee-container">
+        <div class="fade-left"></div>
+        <div class="marquee-content" id="marquee">
+            NDI IGBO CULTURAL AND SOCIAL ENLIGHTENMENT FOR UNITY FOUNDATION: An organization that is dedicated to Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, pariatur. Nam hic alias doloribus dicta? Cum tempore odio ea maxime officiis quis, veniam aliquid quod maiores illum itaque sed dolore?
+        </div>
+        <div class="fade-right"></div>
+    </div>
+</section>
+
+<section id="about">
+    <div class="container-fluid py-5">
+        <div class="row">
+            <div class="col-md-7 d-none d-md-block">
+                <img src="{% static 'images/hero-3.jpg' %}" alt="" class="img-fluid about_image">
+            </div>
+            <div class="col-md-5">
+                <div class="card slanted-card-right">
+                    <h2 class="text-white mb-4">WHAT WE DO</h2>
+                    <P class="text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro fugit, unde tenetur voluptates dolor facilis quibusdam molestias rem voluptate sequi, excepturi placeat itaque ipsum nemo? Sit eveniet recusandae soluta minima fugit repellendus sapiente, consequuntur eaque dolorum numquam atque et porro animi iste aliquid maiores ea modi repudiandae ad, eum inventore sunt.</P>
+                    <a href="" class="btn btn-main w-50">Learn More</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<section id="my-video">
+    <div class="row gx-0">
+        <div class="col-md-6 ">
+            <img src="{% static 'images/hero-3.jpg' %}" alt="" class="img-fluid">
+        </div>
+        <div class="col-md-6 my-video-right"></div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+<!-- script for marquee -->
+<script>
+    const marquee = document.getElementById('marquee');
+    const marqueeContainer = document.getElementById('marquee-container');
+    let marqueeWidth = marquee.offsetWidth;
+    let containerWidth = marqueeContainer.offsetWidth;
+
+    let currentPos = containerWidth;
+    let animationFrameId;
+
+    function animateMarquee() {
+        if (currentPos <= -marqueeWidth) {
+            // Reset position when it goes out of view
+            currentPos = containerWidth;
+        } else {
+            currentPos -= 2; // Adjust speed by changing this value
+        }
+        
+        marquee.style.transform = `translateX(${currentPos}px)`;
+
+        // Save the ID of the current animation frame to cancel it later
+        animationFrameId = requestAnimationFrame(animateMarquee);
+    }
+
+    // Start animation
+    animateMarquee();
+
+    // Pause animation on hover
+    marqueeContainer.addEventListener('mouseenter', () => {
+        cancelAnimationFrame(animationFrameId); // Stop animation
+    });
+
+    // Resume animation when mouse leaves
+    marqueeContainer.addEventListener('mouseleave', () => {
+        animateMarquee(); // Restart animation
+    });
+</script>
+
+{% endblock %}
