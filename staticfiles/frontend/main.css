@@ -1,0 +1,244 @@
+:root {
+  /* buttons */
+  --btn-color: rgb(212, 138, 0);
+  --btn-color-hover: rgb(230, 168, 54);
+  --second-btn-color: rgb(0, 119, 54);
+  --second-btn-color-hover: rgb(28, 150, 83);
+
+  /* major colors */
+  --main-white: #ffffff;
+  --main-black: #000;
+  --main-yellow: #eb8a14;
+  --main-color: #be3c1c;
+  --main-color-hover: #a0290c;
+  --main-text-color: #4a272f;
+}
+
+body {
+  background-color: rgb(241, 241, 241);
+}
+
+a {
+  text-decoration: none;
+}
+
+.btn {
+  font-size: 16px;
+  color: var(--main-white);
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* navbar start */
+.navbar {
+  background-color: #fff;
+  /* padding: 0 !important; */
+}
+
+.navbar .ngo-logo {
+  width: 200px;
+}
+.nav-item {
+  height: 100%;
+}
+.nav-item .nav-link {
+  font-size: 16px;
+  font-weight: 600;
+  margin-right: 10px;
+  color: var(--main-black);
+  padding-block: 28px;
+}
+
+.nav-item .nav-link.active {
+  background-color: var(--main-color);
+  color: var(--main-white);
+}
+
+.nav-item .nav-link:hover {
+  background-color: var(--main-color-hover);
+  color: var(--main-white);
+  margin-block: 0;
+}
+
+.navbar_btns .donate_btn {
+  background-color: var(--main-yellow);
+  padding: 5px 40px;
+  font-size: 14px;
+}
+
+.navbar_btns .donate_btn:hover {
+  background-color: var(--btn-color-hover);
+  color: var(--main-white);
+}
+
+.navbar_btns .aid_btn {
+  background-color: var(--main-color);
+  padding: 5px 30px;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.navbar_btns .aid_btn:hover {
+  background-color: var(--main-color-hover);
+  color: var(--main-white);
+}
+
+.navbar-toggler {
+  background-color: var(--main-text-color);
+}
+
+.navbar-toggler .fa-bars {
+  font-size: 30px;
+  color: #fff;
+}
+/* navbar end */
+
+/* hero start */
+.carousel-item {
+  position: relative;
+  height: 93vh;
+  object-fit: cover;
+}
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* color: white; */
+  text-align: center;
+}
+
+.carousel-words {
+  width: 700px;
+}
+
+.carousel-words h5 {
+  font-size: 40px;
+  text-align: center;
+  line-height: 1.5;
+  font-weight: bold;
+  color: var(--main-yellow);
+}
+/* hero ends */
+
+/* arquee start */
+.marquee-container {
+  position: relative;
+  width: 100%;
+  height: 50px;
+  overflow: hidden;
+  background-color: var(--main-color);
+  color: var(--main-white);
+}
+
+.marquee-content {
+  position: absolute;
+  white-space: nowrap;
+  display: inline-block;
+  padding-top: 12px;
+}
+
+/* Fading effect */
+.fade-left,
+.fade-right {
+  position: absolute;
+  top: 0;
+  width: 50px;
+  height: 100%;
+  z-index: 1;
+}
+
+.fade-left {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(188, 60, 29, 1),
+    rgba(170, 77, 61, 0)
+  );
+}
+
+.fade-right {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba(188, 60, 29, 1),
+    rgba(170, 77, 61, 0)
+  );
+}
+/* arquee end */
+
+/* about start */
+#about {
+  background-color: #86881050;
+}
+
+#about .container-fluid {
+  margin-inline: 80px !important;
+}
+
+.about_image {
+  height: 450px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.slanted-card-right {
+  width: 650px;
+  min-height: 350px;
+  background-color: var(--main-color);
+  margin-left: -250px;
+  clip-path: polygon(calc(100% - 500px) 0, 100% 0, 100% 100%, 0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 160px;
+  padding-right: 20px;
+  margin-top: 50px;
+}
+.btn-main {
+  background-color: var(--main-yellow);
+  border-color: var(--main-yellow);
+}
+.btn-main:hover {
+  background-color: var(--btn-color-hover);
+  border-color: var(--btn-color-hover);
+  color: var(--main-white);
+}
+
+@media (max-width: 1000px) {
+  .about_image {
+    height: 100%;
+  }
+  .slanted-card-right {
+    margin-left: 0;
+    width: 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 2px;
+  }
+  #about .container-fluid {
+    margin-inline: 0 !important;
+  }
+}
+
+/* my video start */
+
+.my-video-right {
+  background-color: var(--main-text-color);
+}
